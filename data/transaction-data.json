@@ -1,0 +1,244 @@
+{
+  "transactions": [
+    {
+      "id": "txn001",
+      "amount": 3200.0,
+      "date": "2025-01-01T09:00:00Z",
+      "description": "Salary Deposit",
+      "type": "Credit",
+      "status": "Completed",
+      "relatedParty": {
+        "name": "XYZ Sdn Bhd",
+        "id": "MY12345678"
+      }
+    },
+    {
+      "id": "txn002",
+      "amount": 45.5,
+      "date": "2025-01-02T12:15:00Z",
+      "description": "TnG Reload",
+      "type": "Debit",
+      "status": "Completed",
+      "relatedParty": {
+        "name": "Touch 'n Go eWallet",
+        "id": "TNG12345"
+      }
+    },
+    {
+      "id": "txn003",
+      "amount": 15.0,
+      "date": "2025-01-03T08:30:00Z",
+      "description": "Roti Canai Breakfast Transfer",
+      "type": "Debit",
+      "status": "Completed",
+      "relatedParty": {
+        "name": "Ali Mamak Stall",
+        "id": "DuitNow123"
+      }
+    },
+    {
+      "id": "txn004",
+      "amount": 210.0,
+      "date": "2025-01-03T15:00:00Z",
+      "description": "Electricity Bill (TNB)",
+      "type": "Debit",
+      "status": "Completed",
+      "relatedParty": {
+        "name": "Tenaga Nasional Berhad",
+        "id": "TNB56789"
+      }
+    },
+    {
+      "id": "txn005",
+      "amount": 500.0,
+      "date": "2025-01-04T18:00:00Z",
+      "description": "Rental Payment",
+      "type": "Debit",
+      "status": "Completed",
+      "relatedParty": {
+        "name": "Mr. Tan",
+        "id": "DuitNow45678"
+      }
+    },
+    {
+      "id": "txn006",
+      "amount": 300.0,
+      "date": "2025-01-05T14:30:00Z",
+      "description": "Freelance Payment",
+      "type": "Credit",
+      "status": "Completed",
+      "relatedParty": {
+        "name": "KL Startup Inc.",
+        "id": "MY98765432"
+      }
+    },
+    {
+      "id": "txn007",
+      "amount": 150.0,
+      "date": "2025-01-06T10:00:00Z",
+      "description": "Mobile Reload (Digi)",
+      "type": "Debit",
+      "status": "Completed",
+      "relatedParty": {
+        "name": "Digi Telco",
+        "id": "DIGI4321"
+      }
+    },
+    {
+      "id": "txn008",
+      "amount": 2500.0,
+      "date": "2025-01-07T11:00:00Z",
+      "description": "Salary Bonus",
+      "type": "Credit",
+      "status": "Completed",
+      "relatedParty": {
+        "name": "XYZ Sdn Bhd",
+        "id": "MY12345678"
+      }
+    },
+    {
+      "id": "txn009",
+      "amount": 120.0,
+      "date": "2025-01-07T16:00:00Z",
+      "description": "GSC Movie Tickets",
+      "type": "Debit",
+      "status": "Completed",
+      "relatedParty": {
+        "name": "Golden Screen Cinemas",
+        "id": "GSC12345"
+      }
+    },
+    {
+      "id": "txn010",
+      "amount": 25.0,
+      "date": "2025-01-08T09:00:00Z",
+      "description": "Tealive Drinks Transfer",
+      "type": "Debit",
+      "status": "Completed",
+      "relatedParty": {
+        "name": "Tealive Subang Jaya",
+        "id": "DuitNow99999"
+      }
+    },
+    {
+      "id": "txn011",
+      "amount": 50.0,
+      "date": "2025-01-08T12:00:00Z",
+      "description": "Grab Food Delivery",
+      "type": "Debit",
+      "status": "Completed",
+      "relatedParty": {
+        "name": "Grab Malaysia",
+        "id": "GRAB1234"
+      }
+    },
+    {
+      "id": "txn012",
+      "amount": 30.0,
+      "date": "2025-01-08T15:30:00Z",
+      "description": "DuitNow Transfer for Lunch",
+      "type": "Debit",
+      "status": "Completed",
+      "relatedParty": {
+        "name": "Ahmad's Warung",
+        "id": "DuitNow5555"
+      }
+    },
+    {
+      "id": "txn013",
+      "amount": 120.0,
+      "date": "2025-01-09T13:45:00Z",
+      "description": "Water Bill (Syabas)",
+      "type": "Debit",
+      "status": "Completed",
+      "relatedParty": {
+        "name": "Pengurusan Air Selangor",
+        "id": "SYABAS888"
+      }
+    },
+    {
+      "id": "txn014",
+      "amount": 75.0,
+      "date": "2025-01-09T20:00:00Z",
+      "description": "FamilyMart Snacks",
+      "type": "Debit",
+      "status": "Completed",
+      "relatedParty": {
+        "name": "FamilyMart Malaysia",
+        "id": "FM45678"
+      }
+    },
+    {
+      "id": "txn015",
+      "amount": 100.0,
+      "date": "2025-01-10T10:15:00Z",
+      "description": "Fuel (Petronas)",
+      "type": "Debit",
+      "status": "Completed",
+      "relatedParty": {
+        "name": "Petronas KLCC",
+        "id": "PET12345"
+      }
+    },
+    {
+      "id": "txn016",
+      "amount": 550.0,
+      "date": "2025-01-10T15:00:00Z",
+      "description": "Freelance Graphic Design Payment",
+      "type": "Credit",
+      "status": "Completed",
+      "relatedParty": {
+        "name": "Visual Design Studio",
+        "id": "MYDesign999"
+      }
+    },
+    {
+      "id": "txn017",
+      "amount": 300.0,
+      "date": "2025-01-11T18:30:00Z",
+      "description": "Shopping at IKEA",
+      "type": "Debit",
+      "status": "Completed",
+      "relatedParty": {
+        "name": "IKEA Damansara",
+        "id": "IKEA2025"
+      }
+    },
+    {
+      "id": "txn018",
+      "amount": 1000.0,
+      "date": "2025-01-12T11:30:00Z",
+      "description": "Loan Repayment",
+      "type": "Debit",
+      "status": "Completed",
+      "relatedParty": {
+        "name": "Maybank Loan Department",
+        "id": "MBBLOAN123"
+      }
+    },
+    {
+      "id": "txn019",
+      "amount": 20.0,
+      "date": "2025-01-12T14:15:00Z",
+      "description": "Nasi Lemak Transfer",
+      "type": "Debit",
+      "status": "Completed",
+      "relatedParty": {
+        "name": "Nasi Lemak Makcik",
+        "id": "DuitNow1234"
+      }
+    },
+    {
+      "id": "txn020",
+      "amount": 1500.0,
+      "date": "2025-01-13T10:00:00Z",
+      "description": "Refund from Zalora",
+      "type": "Credit",
+      "status": "Completed",
+      "relatedParty": {
+        "name": "Zalora Malaysia",
+        "id": "ZAL88888"
+      }
+    }
+  ]
+}

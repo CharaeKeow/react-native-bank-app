@@ -9,3 +9,17 @@ Besides, I also opted to just use [Expo Go](https://expo.dev/go) when developing
 ## Expo Router
 
 [Expo Router](https://docs.expo.dev/router/introduction/) is chosen for routing. I worked with [React Navigation](https://reactnavigation.org/) last time, but it's been a while, and this time I want to try something new. First impression is it looks similar with Next routing, which is nice.
+
+## Transactions Data
+
+The dummy transactions data are located in `/data/transaction-data.json`, which contains 20 fake transactions. They are wrapped in a container object rather than a plain array, to mimic typical API response:
+
+```json
+{
+  "transactions": [
+    /* array of transactions */
+  ]
+}
+```
+
+The data structure follows `Transaction` type declared in `/types.ts`
