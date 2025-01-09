@@ -1,16 +1,19 @@
-import { Link } from 'expo-router';
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { FlatList, StyleSheet, Text, View } from 'react-native';
+import { getTransactionData } from '../data/get-transaction-data';
+import { TransactionHistoryItem } from '../components/transaction-history-item';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function TransactionHistory() {
+  const transactions = getTransactionData();
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-      <Link style={styles.button} href={`/transaction/${1}`}>
-        Transaction detail
-      </Link>
-    </View>
+    <SafeAreaView style={styles.container}>
+      <FlatList
+        style={styles.listContainer}
+        data={transactions}
+        renderItem={({ item }) => <TransactionHistoryItem transaction={item} />}
+      />
+    </SafeAreaView>
   );
 }
 
@@ -21,6 +24,14 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+    width: '100%',
+  },
+  listContainer: {
+    flex: 1,
+    width: '100%',
+    padding: 20,
+    paddingTop: 8,
+    paddingBottom: 20,
   },
   button: {
     backgroundColor: '#032b43',
