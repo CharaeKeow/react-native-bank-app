@@ -1,13 +1,27 @@
-import { Button, FlatList, StyleSheet } from 'react-native';
+import { Button, FlatList, RefreshControl, StyleSheet } from 'react-native';
 import { getTransactionData } from '../src/data/get-transaction-data';
 import { TransactionHistoryItem } from '../src/components/transaction-history-item';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useAuth } from '../src/contexts/auth-provider';
+import { useState } from 'react';
 
 export default function TransactionHistory() {
-  const transactions = getTransactionData();
+  const transactions = getTransactionData(); // TODO: What's the equivalent of react-query for React Native for data fetching? Replace if got time
 
+  const [transactionData, setTransactionData] = useState(transactions.slice(1)); // Slice one transaction out so that we can test refreshing to get data
+  const [isRefreshing, setIsRefreshing] = useState(false);
   const { isAuthenticated, login, logout } = useAuth();
+
+  // A fake function to simulate refreshing data
+  const handleRefresh = () => {
+    setIsRefreshing(true);
+
+    // Simulate a fast network request waiting time
+    setTimeout(() => {
+      setTransactionData(transactions); // replace data with new data
+      setIsRefreshing(false);
+    }, 500);
+  };
 
   return (
     <SafeAreaView style={styles.container}>
@@ -18,8 +32,11 @@ export default function TransactionHistory() {
 
       <FlatList
         style={styles.listContainer}
-        data={transactions}
+        data={transactionData}
         renderItem={({ item }) => <TransactionHistoryItem transaction={item} />}
+        refreshControl={
+          <RefreshControl refreshing={isRefreshing} onRefresh={handleRefresh} />
+        }
       />
     </SafeAreaView>
   );
