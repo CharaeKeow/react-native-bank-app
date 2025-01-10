@@ -1,8 +1,8 @@
 import { useLocalSearchParams } from 'expo-router';
 import { StyleSheet, Text, View } from 'react-native';
-import { getTransactionData } from '../../src/data/get-transaction-data';
-import { TransactionDetail } from '../../src/components/transaction-detail';
-import { useAuth } from '../../src/contexts/auth-provider';
+import { getTransactionData } from '../../data/get-transaction-data';
+import { TransactionDetail } from '../../components/transaction-detail';
+import { useAuth } from '../../contexts/auth-provider';
 
 export default function TransactionDetailScreen() {
   const { id } = useLocalSearchParams();
