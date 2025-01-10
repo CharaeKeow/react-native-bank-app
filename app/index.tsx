@@ -1,8 +1,8 @@
 import { Button, FlatList, StyleSheet } from 'react-native';
-import { getTransactionData } from '../data/get-transaction-data';
-import { TransactionHistoryItem } from '../components/transaction-history-item';
+import { getTransactionData } from '../src/data/get-transaction-data';
+import { TransactionHistoryItem } from '../src/components/transaction-history-item';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { useAuth } from '../contexts/auth-provider';
+import { useAuth } from '../src/contexts/auth-provider';
 
 export default function TransactionHistory() {
   const transactions = getTransactionData();

@@ -1,5 +1,5 @@
 import { Slot, Stack } from 'expo-router';
-import { AuthProvider } from '../contexts/auth-provider';
+import { AuthProvider } from '../src/contexts/auth-provider';
 
 export default function HomeLayout() {
   return (
