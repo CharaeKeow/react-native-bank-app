@@ -3,6 +3,7 @@ import { Transaction, TransactionType } from '../types';
 import { formatDate } from '../util/format-date';
 import { Link } from 'expo-router';
 import { formatTransactionAmount } from '../util/format-transaction-amount';
+import { useAuth } from '../contexts/auth-provider';
 
 type TransactionHistoryProps = {
   transaction: Transaction;
@@ -11,6 +12,8 @@ type TransactionHistoryProps = {
 export const TransactionHistoryItem = ({
   transaction,
 }: TransactionHistoryProps) => {
+  const { isAuthenticated, login } = useAuth();
+
   return (
     <Link href={`/transaction/${transaction.id}`} asChild>
       <TouchableOpacity style={styles.transactionItem}>
