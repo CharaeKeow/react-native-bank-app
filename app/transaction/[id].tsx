@@ -1,10 +1,19 @@
 import { useLocalSearchParams } from 'expo-router';
-import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import { getTransactionData } from '../../data/get-transaction-data';
+import { TransactionDetail } from '../../components/transaction-detail';
+import { useAuth } from '../../contexts/auth-provider';
 
 export default function TransactionDetailScreen() {
   const { id } = useLocalSearchParams();
+  const { isAuthenticated, login } = useAuth();
+
+  // Authentication guard - if user is not logged in, ask user to authenticate first before they can view the transaction detail
+  // Note: When app becomes bigger and contains more screen, should lift this up somewhere - e.g. in provider level
+  if (!isAuthenticated) {
+    login();
+    return null;
+  }
 
   // Fetch transaction by id
   const transaction = getTransactionData().find((trx) => trx.id === id);
@@ -19,19 +28,7 @@ export default function TransactionDetailScreen() {
 
   return (
     <View style={styles.container}>
-      <Text>Transaction detail</Text>
-      <Text>Transaction ID: {transaction.id}</Text>
-      <Text>Amount: {transaction.amount}</Text>
-      <Text>Description: {transaction.description}</Text>
-      <Text>Status: {transaction.status}</Text>
-      {transaction.relatedParty ? (
-        <View>
-          <Text>Receiver Name: {transaction.relatedParty.name}</Text>
-          <Text>Receiver ID: {transaction.relatedParty.id}</Text>
-        </View>
-      ) : null}
-
-      <StatusBar style="auto" />
+      <TransactionDetail transaction={transaction} />
     </View>
   );
 }
