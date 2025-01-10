@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View } from 'react-native';
 import { Transaction, TransactionStatus, TransactionType } from '../types';
 import { formatTransactionAmount } from '../util/format-transaction-amount';
+import { formatDate } from '../util/format-date';
 
 type TransactionDetailProps = {
   transaction: Transaction;
@@ -17,23 +18,47 @@ export const TransactionDetail = ({ transaction }: TransactionDetailProps) => {
     }
   };
 
+  const processRelatedPartyLabel = (type: TransactionType) => {
+    if (type === 'Credit') {
+      return 'Transfer from';
+    }
+
+    return 'Payment to';
+  };
+
+  const relatedPartyLabel = processRelatedPartyLabel(transaction.type);
+
   return (
     <View style={styles.container}>
       <Text style={styles.amount}>
         {formatTransactionAmount(transaction.amount, transaction.type)}
       </Text>
+      <Text style={styles.date}>{formatDate(transaction.date)}</Text>
       <View style={styles.transactionDetailRow}>
         <Text style={styles.label}>Status: </Text>
-        <Text style={[styles.label, processStatusStyling(transaction.status)]}>
+        <Text
+          style={[
+            styles.value,
+            styles.status,
+            processStatusStyling(transaction.status),
+          ]}
+        >
           {transaction.status}
         </Text>
       </View>
-      <Text>Transaction ID: {transaction.id}</Text>
-      <Text>Description: {transaction.description}</Text>
+      <View style={styles.transactionDetailRow}>
+        <Text style={styles.label}>Transaction ID: </Text>
+        <Text style={styles.value}>{transaction.id}</Text>
+      </View>
+
+      <View style={styles.transactionDetailRow}>
+        <Text style={styles.label}>Description: </Text>
+        <Text style={styles.value}>{transaction.description}</Text>
+      </View>
       {transaction.relatedParty ? (
-        <View>
-          <Text>Receiver Name: {transaction.relatedParty.name}</Text>
-          <Text>Receiver ID: {transaction.relatedParty.id}</Text>
+        <View style={styles.transactionDetailRow}>
+          <Text style={styles.label}>{relatedPartyLabel} </Text>
+          <Text style={styles.value}>{transaction.relatedParty.name}</Text>
         </View>
       ) : null}
     </View>
@@ -42,16 +67,21 @@ export const TransactionDetail = ({ transaction }: TransactionDetailProps) => {
 
 const styles = StyleSheet.create({
   container: {
-    height: '100%',
     width: '100%',
-    flex: 1,
+    padding: 16,
+    flexGrow: 0,
     flexDirection: 'column',
     alignItems: 'flex-start',
     justifyContent: 'flex-start',
+    backgroundColor: '#EFF5FA',
+    borderRadius: 6,
   },
   amount: {
     fontSize: 24,
     fontWeight: '700',
+  },
+  date: {
+    fontSize: 16,
   },
   transactionDetailRow: {
     flexDirection: 'row',
@@ -59,11 +89,14 @@ const styles = StyleSheet.create({
     alignContent: 'flex-start',
   },
   label: {
-    fontSize: 16,
+    fontSize: 18,
     fontWeight: '600',
   },
   value: {
-    fontSize: 16,
+    fontSize: 18,
+  },
+  status: {
+    fontWeight: '700',
   },
   statusCompleted: {
     color: '#137027',

@@ -18,6 +18,7 @@ export default function TransactionDetailScreen() {
   // Fetch transaction by id
   const transaction = getTransactionData().find((trx) => trx.id === id);
 
+  // If no transaction, show error message
   if (!transaction) {
     return (
       <View style={styles.container}>
