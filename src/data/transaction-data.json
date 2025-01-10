@@ -30,7 +30,7 @@
       "date": "2025-01-03T08:30:00Z",
       "description": "Roti Canai Breakfast Transfer",
       "type": "Debit",
-      "status": "Completed",
+      "status": "Pending",
       "relatedParty": {
         "name": "Ali Mamak Stall",
         "id": "DuitNow123"
@@ -42,7 +42,7 @@
       "date": "2025-01-03T15:00:00Z",
       "description": "Electricity Bill (TNB)",
       "type": "Debit",
-      "status": "Completed",
+      "status": "Failed",
       "relatedParty": {
         "name": "Tenaga Nasional Berhad",
         "id": "TNB56789"
