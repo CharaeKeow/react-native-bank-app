@@ -1,4 +1,4 @@
-import { FlatList, StyleSheet, Text, View } from 'react-native';
+import { FlatList, StyleSheet } from 'react-native';
 import { getTransactionData } from '../data/get-transaction-data';
 import { TransactionHistoryItem } from '../components/transaction-history-item';
 import { SafeAreaView } from 'react-native-safe-area-context';

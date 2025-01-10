@@ -1,4 +1,5 @@
-import { createContext, useContext, useEffect, useState } from 'react';
+import { createContext, useContext, useState } from 'react';
+import { authenticateUser } from '../services/authenticate-user';
 
 type AuthContextType = {
   isAuthenticated: boolean;
@@ -16,7 +17,13 @@ export const AuthProvider = ({ children }: InviteProviderProps) => {
 
   // TODO: Complete this
   const login = async () => {
-    setIsAuthenticated(true);
+    const result = await authenticateUser();
+
+    if (result) {
+      setIsAuthenticated(result);
+    }
+
+    // TODO: Show toaster or alert message to inform user
   };
 
   const value: AuthContextType = {
