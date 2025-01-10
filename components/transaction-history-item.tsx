@@ -12,7 +12,7 @@ type TransactionHistoryProps = {
 export const TransactionHistoryItem = ({
   transaction,
 }: TransactionHistoryProps) => {
-  const { isAuthenticated, login } = useAuth();
+  const { isAuthenticated } = useAuth();
 
   return (
     <Link href={`/transaction/${transaction.id}`} asChild>
