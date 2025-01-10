@@ -1,5 +1,5 @@
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import { Transaction, TransactionType } from '../types';
+import { Transaction } from '../types';
 import { formatDate } from '../util/format-date';
 import { Link } from 'expo-router';
 import { formatTransactionAmount } from '../util/format-transaction-amount';
@@ -27,7 +27,9 @@ export const TransactionHistoryItem = ({
             transaction.type === 'Debit' ? styles.debit : styles.credit,
           ]}
         >
-          {formatTransactionAmount(transaction.amount, transaction.type)}
+          {isAuthenticated
+            ? formatTransactionAmount(transaction.amount, transaction.type)
+            : '****'}
         </Text>
       </TouchableOpacity>
     </Link>
