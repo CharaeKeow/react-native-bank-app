@@ -4,6 +4,7 @@ import { authenticateUser } from '../services/authenticate-user';
 type AuthContextType = {
   isAuthenticated: boolean;
   login: () => Promise<void>;
+  logout: () => Promise<void>;
 };
 
 type InviteProviderProps = {
@@ -26,9 +27,14 @@ export const AuthProvider = ({ children }: InviteProviderProps) => {
     // TODO: Show toaster or alert message to inform user
   };
 
+  const logout = async () => {
+    setIsAuthenticated(false);
+  };
+
   const value: AuthContextType = {
     isAuthenticated,
     login,
+    logout,
   };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
