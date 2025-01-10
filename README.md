@@ -44,7 +44,9 @@ The dummy transactions data are located in `/data/transaction-data.json`, which 
 
 The data structure follows `Transaction` type declared in `/types.ts`
 
-### Things that are nice to setup but didn't due to time constraint
+### Things that are nice to include but didn't due to time constraint
 
 - NativeWind - due to I am too used to Tailwind for CSS
 - TypeScript import alias
+- Sort transactions by date - currently the transactions data in `.json` file are in ascending order (by date).
+- Data are being fetched on the fly. If on web I would use `react-query` or equivalent library so that we can cache the data

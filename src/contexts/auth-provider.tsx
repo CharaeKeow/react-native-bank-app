@@ -16,7 +16,6 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 export const AuthProvider = ({ children }: InviteProviderProps) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-  // TODO: Complete this
   const login = async () => {
     const result = await authenticateUser();
 
