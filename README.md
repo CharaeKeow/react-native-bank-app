@@ -6,9 +6,16 @@ A simple React Native bank app with the following features:
 - Transaction Detail screen to view detailed transaction information
 - Biometric authentication
 
-## Running the Project
+## Installation and Running the Project
 
-1. Install dependency using this command
+1. Clone the repository:
+
+```bash
+git clone https://github.com/CharaeKeow/react-native-bank-app.git
+cd react-native-bank-app
+```
+
+2. Install dependency using this command
 
 ```bash
   pnpm install
@@ -16,11 +23,11 @@ A simple React Native bank app with the following features:
 
 **Note:** I am using `pnpm` as my package manager. Due to time constraint, I did't test whether other package manager like `npm` or `yarn` can run installation command or start project
 
-2. Start the development server by running `pnpm start`.
+3. Start the development server by running `pnpm start`.
 
    **Note:** I am testing my app via Expo Go, so this command without flag is suffice. Due to time constraint, I also didn't test whether running `pnpm start` with flag will produce any error or not.
 
-3. To view the app, download [Expo Go](https://expo.dev/go) app, and scan the QR code show on the console. You should expect to see the app in action
+4. To view the app, download [Expo Go](https://expo.dev/go) app, and scan the QR code show on the console. You should expect to see the app in action
 
 ## Development Design Decision Log
 
