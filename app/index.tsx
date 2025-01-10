@@ -1,4 +1,10 @@
-import { Button, FlatList, RefreshControl, StyleSheet } from 'react-native';
+import {
+  Button,
+  FlatList,
+  RefreshControl,
+  StyleSheet,
+  View,
+} from 'react-native';
 import { getTransactionData } from '../src/data/get-transaction-data';
 import { TransactionHistoryItem } from '../src/components/transaction-history-item';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -31,7 +37,8 @@ export default function TransactionHistory() {
       />
 
       <FlatList
-        style={styles.listContainer}
+        style={styles.flatListContainer}
+        ItemSeparatorComponent={() => <View style={styles.separator} />}
         data={transactionData}
         renderItem={({ item }) => <TransactionHistoryItem transaction={item} />}
         refreshControl={
@@ -51,12 +58,15 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     width: '100%',
   },
-  listContainer: {
+  flatListContainer: {
     flex: 1,
     width: '100%',
     padding: 20,
     paddingTop: 8,
     paddingBottom: 20,
+  },
+  separator: {
+    height: 8,
   },
   button: {
     backgroundColor: '#032b43',

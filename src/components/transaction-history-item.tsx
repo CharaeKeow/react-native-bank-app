@@ -42,8 +42,15 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
+    paddingVertical: 16,
+    paddingHorizontal: 12,
+    backgroundColor: '#EFF5FA',
+    borderRadius: 6,
   },
-  description: {},
+  description: {
+    fontWeight: 500,
+    fontSize: 16,
+  },
   date: {},
   amount: {
     fontWeight: 'bold',
