@@ -1,13 +1,21 @@
-import { FlatList, StyleSheet } from 'react-native';
+import { Button, FlatList, StyleSheet } from 'react-native';
 import { getTransactionData } from '../data/get-transaction-data';
 import { TransactionHistoryItem } from '../components/transaction-history-item';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { useAuth } from '../contexts/auth-provider';
 
 export default function TransactionHistory() {
   const transactions = getTransactionData();
 
+  const { isAuthenticated, login, logout } = useAuth();
+
   return (
     <SafeAreaView style={styles.container}>
+      <Button
+        title={isAuthenticated ? 'Logout' : 'Login'}
+        onPress={() => (isAuthenticated ? logout() : login())}
+      />
+
       <FlatList
         style={styles.listContainer}
         data={transactions}
